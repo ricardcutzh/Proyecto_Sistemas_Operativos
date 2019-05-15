@@ -1,0 +1,30 @@
+{
+  "name": "redsocial",
+  "version": "1.0.0",
+  "description": "Proyecto de Sistemas Operativos 1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardcutzh/Proyecto_Sistemas_Operativos.git"
+  },
+  "keywords": [
+    "Sistemas",
+    "Operativos",
+    "USAC",
+    "Ingenieria"
+  ],
+  "author": "Ricardo Cutz Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardcutzh/Proyecto_Sistemas_Operativos/issues"
+  },
+  "homepage": "https://github.com/ricardcutzh/Proyecto_Sistemas_Operativos#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
