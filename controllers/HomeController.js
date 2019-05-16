@@ -12,7 +12,22 @@ function Home(req, res)
     res.render('home');
 }
 
+function saveTweets(req, res)
+{
+    console.log('POST: /Tweets');
+    var alias = req.body.alias;
+    var nombre = req.body.nombre;
+    var txt = req.body.txt;
+    var categoria = req.body.categoria;
+    
+    console.log(alias);
+    res.json({
+        respuesta:1
+    });
+}
+
 module.exports = {
     prueba,
-    Home
+    Home,
+    saveTweets
 }
