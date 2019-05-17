@@ -37,14 +37,10 @@ function saveTweets(req, res)
                     nombre: nombre,
                     tweets: []
                 });
-                //console.log('usuario nuevo...');
-                console.log(user._id);
-                user.save();
+                //user.save();
             }
             else
             {
-                //console.log('usuarios existentes');
-                console.log(docs[0]);
                 user = docs[0];
             }
             //ENCONTRANDO LA CATEGORIA
@@ -59,14 +55,9 @@ function saveTweets(req, res)
                             nombre: categoria,
                             tweets: []
                         });
-                        //console.log("categoria nueva...");
-                        console.log(catego._id);
-                        catego.save();
                     }
                     else
                     {
-                        //console.log("categoria existente...");
-                        console.log(cates[0]);
                         catego = cates[0];
                     }
                     var tweet = new Tweet({
@@ -79,6 +70,10 @@ function saveTweets(req, res)
                     res.status(200).json({
                         respuesta:1
                     });
+                    user.tweets.push(tweet._id);
+                    catego.tweets.push(tweet._id);
+                    user.save();
+                    catego.save();
                 })
                 .catch(err => {
                     res.status(500).json({
@@ -98,3 +93,4 @@ module.exports = {
     Home,
     saveTweets
 }
+// db.usuarios.aggregate([{$project:{usuario:1,tweets:{$size:"$tweets"}}},{$sort:{tweets:-1}},{$limit:1}])
